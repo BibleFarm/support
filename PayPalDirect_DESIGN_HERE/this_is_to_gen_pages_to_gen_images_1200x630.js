@@ -166,8 +166,8 @@ $(".input_photo_image").val("00" + NeededPostToCreate);
 // clear sides
 $(".side_l, .side_r").hide();
 // show only the one I clicked
-$(".AD_L_" + NeededPostToCreate).show("slow");
-$(".AD_R_" + NeededPostToCreate).show("slow");
+$(".AD_L_" + NeededPostToCreate).show();
+$(".AD_R_" + NeededPostToCreate).show();
 });
 // autofill the fields
 $(".UI_AD_photo > button, .input_photo_post, .input_photo_date, .input_photo_visit, .input_photo_image").on("click keyup change", function() {
@@ -176,7 +176,7 @@ var NeededDate = $(".input_photo_date").val();
 var NeededVisit = $(".input_photo_visit").val();
 var NeededPhoto = $(".input_photo_image").val();
 var NeededGrabLocalImage = $(".input_photo_grab_local_image").val("../../../local-farm-photos/" + NeededDate + "-" + NeededVisit + "/" + NeededDate + "-" + NeededVisit + "_" + NeededPhoto + ".jpg");
-var NeededHtmlPageName = $(".input_photo_html_page").val(NeededVisit + "-" + NeededPost + ".html");
+var NeededHtmlPageName = $(".input_photo_html_page").val(NeededVisit + "-" + NeededPost);
 var NeededImageUrl = $(".input_photo_image_url").val(NeededVisit + "-" + NeededPost + ".png");
 var LocalImageToGrab = $(".input_photo_grab_local_image").val();
 $(".image_cntainer > img").attr("src", LocalImageToGrab);
@@ -230,9 +230,9 @@ var order_id = $('#order_id').val();
 		// fill the input that will contain the content of the js file to create
 		$('#populate_01_10').on('click', function() {
 		var idNeeded = $('#order_id').val();
-		$('#fname_01_10').val(idNeeded + '_01_10');
+		$('#fname_01_10').val(idNeeded);
 		// node JS File to run these 10 images for this verse
-		var commentFileTitle = "// node JS File to run these 10 images for this verse\n\n";
+		var commentFileTitle = "// node JS File to run this image\n\n";
 		// var to populate initial for Autofill node JS File Content
 		var initialRequireFileSystem = "const fsPromises = require('fs').promises;\n\n";
 		// common variables for all ads
@@ -242,13 +242,13 @@ var order_id = $('#order_id').val();
 		// Targeting Women with: so I asked him... What's your favourite verse?
 		// So, let's modify the DOM for AD_01
 		var DOM_modified_for_AD_01 = $('html').html()
-		.replace('../this_is_to_gen_pages_to_gen_images_5000x5000.js', '')
+		.replace('../this_is_to_gen_pages_to_gen_images_1200x630.js', '')
 		.replace(/\'/g, "\\\'");
 		// now proceed to build the code
 		var commentBeginAD_01 = "// BEGIN AD_01\n";
 		var commentEndAD_01 = "\n// END AD_01\n\n";
-		var HtmlFileName_01 = $('#order_id').val() + "-AD_01-" + "S-115";
-		var lets_add_the_rest_for_AD_01 = "</html>', function (err) {  if (err) throw err;  console.log('" + HtmlFileName_01 + " Saved!');}).then(() => {    console.log('I think " + HtmlFileName_01 + " is saved, so I\\\'m going to run the puppeteer now');const puppeteer = require('/home/demo/node_modules/puppeteer'); (async () => { const browser = await puppeteer.launch({      defaultViewport: {width: 7632, height: 7632}  }); const page = await browser.newPage(); await page.goto('file:///media/demo/ALL-DATA/Github/local-shop/Create_Pages_And_Images/RedBubble_Square/Pages/" + HtmlFileName_01 + ".html'); await page.waitForTimeout(100); await page.screenshot({ path: '//media/demo/ALL-DATA/Github/local-shop/Create_Pages_And_Images/RedBubble_Square/Images/" + HtmlFileName_01 + ".png' }); await browser.close(); })();  }).catch(er => {    console.log(er);  });";
+		var HtmlFileName_01 = $('#order_id').val();
+		var lets_add_the_rest_for_AD_01 = "</html>', function (err) {  if (err) throw err;  console.log('" + HtmlFileName_01 + " Saved!');}).then(() => {    console.log('I think " + HtmlFileName_01 + " is saved, so I\\\'m going to run the puppeteer now');const puppeteer = require('/home/demo/node_modules/puppeteer'); (async () => { const browser = await puppeteer.launch({      defaultViewport: {width: 1200, height: 630}  }); const page = await browser.newPage(); await page.goto('file:///media/demo/ALL-DATA/Github/support/PayPalDirect_DESIGN_HERE/Pages_to_create_images/" + HtmlFileName_01 + ".html'); await page.waitForTimeout(100); await page.screenshot({ path: '//media/demo/ALL-DATA/Github/support/pictures/" + HtmlFileName_01 + ".png' }); await browser.close(); })();  }).catch(er => {    console.log(er);  });";
 		var finishedWithAD_01 = (commentBeginAD_01 + beforeHtmlFileName + HtmlFileName_01 + afterHtmlFileName + DOM_modified_for_AD_01 + lets_add_the_rest_for_AD_01 + commentEndAD_01).replace("</script>\n", "</script>");
 		// AD_01 END
 
@@ -331,6 +331,15 @@ console.log("creating JS file");
 ///////////////////////////////////////
 
 
+///////////////////////////////////////
+// BEGIN unwrap the download to reset & create the next picture
+///////////////////////////////////////
+$('.input_photo_date, .input_photo_visit, .AD-01, .AD-02, .AD-03, .AD-04, .AD-05, .AD-06').on('click', function() {
+$("#downloadlink_01_10 > .wrapper_to_move_flowers").unwrap();
+});
+///////////////////////////////////////
+// END unwrap the download to reset & create the next picture
+///////////////////////////////////////
 
 
 
