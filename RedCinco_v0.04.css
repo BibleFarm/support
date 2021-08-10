@@ -965,12 +965,10 @@ body {
 .wrap_website_jovi > .swiper-container > .swiper-wrapper > .swiper-slide {
   background-position: center;
   background-size: cover;
-  max-width: 33.33%;
-  min-width: 310px;
-  height: 2000px;
-  background: !important;
+  background: none !important;
   text-align: center;
 }
+
 .swiper-button-next {
   position: fixed;
   line-height: 44px !important;
@@ -1001,7 +999,11 @@ body {
 }
 .swiper-button-next, .swiper-button-prev {
   top: calc(100% - 44px - 4px) !important;
+  cursor: pointer;
 }
+.swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after,
+.swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {display: none !important}
+
 .original_provided {
   display: none;
   color: #ae9c80;
@@ -2539,9 +2541,11 @@ img {
   display: inline-block;
     width: 312px;
     }
+/*
 .wrap_swiper_ads > .swiper-container > .swiper-wrapper > .swiper-slide {
   display: inline-block;
       width: 312px;
       max-width: 312px;
       text-align: center;
     }
+*/

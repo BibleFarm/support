@@ -83,47 +83,58 @@ $(".flex-parent").children(".flex-child").each(function() {
 ///// BEGIN swiper bf navigation /
 //////////////////////////////////
   var swiper_jovi = new Swiper(".swiper-container-main", {
+          slidesPerView: 1,
+        centeredSlides: true,
+
+        breakpoints: {
+          960: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+          1600: {
+            slidesPerView: 5,
+            spaceBetween: 0,
+          },
+          2240: {
+            slidesPerView: 7,
+            spaceBetween: 0,
+          },
+          2880: {
+            slidesPerView: 9,
+            spaceBetween: 0,
+          },
+          3520: {
+            slidesPerView: 11,
+            spaceBetween: 0,
+          },
+          4160: {
+            slidesPerView: 13,
+            spaceBetween: 0,
+          },
+          4800: {
+            slidesPerView: 15,
+            spaceBetween: 0,
+          },
+        },
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
-    initialSlide: 1,
-//  slidesPerView: 3,
-    spaceBetween: 4,
+    initialSlide: 10,
+      spaceBetween: 0,
     preventClicks: true,
-    //    scrollbar: ".swiper-scrollbar",
-    //    scrollbarHide: false,
     keyboardControl: true,
     mousewheelControl: false,
-//    effect: "coverflow",
-//    effect: 'cube',
-//    grabCursor: true,
     shortSwipes: false,
-    centeredSlides: false,
-    slidesPerView: "auto",
     hashnav: true,
-//    coverflowEffect: {
-//      rotate: 50,
-//      stretch: 0,
-//      depth: 100,
-//      modifier: 1,
-//      slideShadows: true
-//    },
-//    cubeEffect: {
-//      shadow: true,
-//      slideShadows: true,
-//      shadowOffset: 20,
-//      shadowScale: 0.94,
-//    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      type: "progressbar"
-    },
+        keyboard: {
+          enabled: true,
+        },
     hashNavigation: {
       watchState: true
     },
-    // Navigation arrows
-    nextButton: ".swiper-button-next",
-    prevButton: ".swiper-button-prev"
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    }
   });
   // navigation menu clicks
   $(".move_to_bf-menu").click(swiper_jovi, function() {
@@ -194,7 +205,7 @@ var loadgeneral = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#general').hasClass("swiper-slide-visible") ) && ( isEmpty($('.general')) ) ) {
 		console.log('general is empty && is visible');
-$(".general").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDiarioRedCinco%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".general").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadgeneral);
 	}
@@ -209,7 +220,7 @@ var loadnacionales = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#nacionales').hasClass("swiper-slide-visible") ) && ( isEmpty($('.nacionales')) ) ) {
 		console.log('nacionales is empty && is visible');
-$(".nacionales").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Nacionales-111172713648141%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".nacionales").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadnacionales);
 	}
@@ -224,7 +235,7 @@ var loadmundo = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#mundo').hasClass("swiper-slide-visible") ) && ( isEmpty($('.mundo')) ) ) {
 		console.log('mundo is empty && is visible');
-$(".mundo").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRedCincoMundo%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".mundo").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadmundo);
 	}
@@ -239,7 +250,7 @@ var loadpolitica = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#politica').hasClass("swiper-slide-visible") ) && ( isEmpty($('.politica')) ) ) {
 		console.log('politica is empty && is visible');
-$(".politica").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Pol%C3%ADtica-107881443966133%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".politica").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadpolitica);
 	}
@@ -254,7 +265,7 @@ var loadmisiones = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#misiones').hasClass("swiper-slide-visible") ) && ( isEmpty($('.misiones')) ) ) {
 		console.log('misiones is empty && is visible');
-$(".misiones").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Misiones-108787037220372%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".misiones").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadmisiones);
 	}
@@ -269,7 +280,7 @@ var loadpoliciales = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#policiales').hasClass("swiper-slide-visible") ) && ( isEmpty($('.policiales')) ) ) {
 		console.log('policiales is empty && is visible');
-$(".policiales").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Policiales-107124010707450%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".policiales").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadpoliciales);
 	}
@@ -284,7 +295,7 @@ var loaddeportes = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#deportes').hasClass("swiper-slide-visible") ) && ( isEmpty($('.deportes')) ) ) {
 		console.log('deportes is empty && is visible');
-$(".deportes").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Deportes-108965590523332%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".deportes").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loaddeportes);
 	}
@@ -299,7 +310,7 @@ var loadcultura = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#cultura').hasClass("swiper-slide-visible") ) && ( isEmpty($('.cultura')) ) ) {
 		console.log('cultura is empty && is visible');
-$(".cultura").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Cultura-102536434521779%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".cultura").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadcultura);
 	}
@@ -314,7 +325,7 @@ var loadespectaculos = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#espectaculos').hasClass("swiper-slide-visible") ) && ( isEmpty($('.espectaculos')) ) ) {
 		console.log('espectaculos is empty && is visible');
-$(".espectaculos").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Espect%C3%A1culos-108856270550050%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".espectaculos").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadespectaculos);
 	}
@@ -329,7 +340,7 @@ var loadeducacion = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#educacion').hasClass("swiper-slide-visible") ) && ( isEmpty($('.educacion')) ) ) {
 		console.log('educacion is empty && is visible');
-$(".educacion").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Educaci%C3%B3n-113085440117866%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".educacion").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadeducacion);
 	}
@@ -344,7 +355,7 @@ var loadsalud = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#salud').hasClass("swiper-slide-visible") ) && ( isEmpty($('.salud')) ) ) {
 		console.log('salud is empty && is visible');
-$(".salud").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Salud-106048144164645%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".salud").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadsalud);
 	}
@@ -359,7 +370,7 @@ var loadtecnologia = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#tecnologia').hasClass("swiper-slide-visible") ) && ( isEmpty($('.tecnologia')) ) ) {
 		console.log('tecnologia is empty && is visible');
-$(".tecnologia").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Tecno-102777781161620%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".tecnologia").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadtecnologia);
 	}
@@ -374,7 +385,7 @@ var loadmascotas = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#mascotas').hasClass("swiper-slide-visible") ) && ( isEmpty($('.mascotas')) ) ) {
 		console.log('mascotas is empty && is visible');
-$(".mascotas").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Mascotas-102501234528007%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".mascotas").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadmascotas);
 	}
@@ -389,7 +400,7 @@ var loadclasificados = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#clasificados').hasClass("swiper-slide-visible") ) && ( isEmpty($('.clasificados')) ) ) {
 		console.log('clasificados is empty && is visible');
-$(".clasificados").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Clasificados-102751944502471%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".clasificados").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadclasificados);
 	}
@@ -404,7 +415,7 @@ var loadprofesionales = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#profesionales').hasClass("swiper-slide-visible") ) && ( isEmpty($('.profesionales')) ) ) {
 		console.log('profesionales is empty && is visible');
-$(".profesionales").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Profesionales-104024767700689%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".profesionales").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadprofesionales);
 	}
@@ -419,7 +430,7 @@ var loadmediakit = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#mediakit').hasClass("swiper-slide-visible") ) && ( isEmpty($('.mediakit')) ) ) {
 		console.log('mediakit is empty && is visible');
-$(".mediakit").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRed-Cinco-Media-Kit-114178356680212%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".mediakit").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadmediakit);
 	}
@@ -435,7 +446,7 @@ var loadinfo = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#info').hasClass("swiper-slide-visible") ) && ( isEmpty($('.info')) ) ) {
 		console.log('info is empty && is visible');
-$(".info").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgranjasolidaria%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".info").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadinfo);
 	}
@@ -452,7 +463,7 @@ var loadradio = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#radio').hasClass("swiper-slide-visible") ) && ( isEmpty($('.radio')) ) ) {
 		console.log('radio is empty && is visible');
-$(".radio").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgranjasolidaria%2F&tabs=timeline&width=312&height=2000&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=244071169860258" width="312" height="2000" style="border:none;overflow:scroll" scrolling="yes" frameborder="10" allowTransparency="true" allow="encrypted-media"></iframe>');
+$(".radio").append('<div class="temp">hola</div>');
 // clear the setInterval
 clearInterval(loadradio);
 	}
@@ -482,7 +493,6 @@ $('.bf_farm_container').perfectScrollbar({
 */
 ///////////////////
 $('.swiper-slide:has(.bf_intro_container)').css('height', '100%');
-
 
 
 //////////////////////////////////
