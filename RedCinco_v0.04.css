@@ -748,14 +748,37 @@ body {
   width: 44px;
   line-height: 44px;
 }
+.bf_wrap_top_search_mobile {
+  width: 44px;
+  line-height: 44px;
+}
 .bf_wrap_top_logo_mobile {
-  width: 216px;
+  width: 128px;
+  line-height: 44px;
+  font-size: 26px
+}
+.bf_wrap_top_cart_mobile {
+  width: 44px;
   line-height: 44px;
 }
 .bf_wrap_top_about_mobile {
   width: 44px;
   line-height: 44px;
 }
+
+.bf_wrap_top_burger_mobile, .bf_wrap_top_search_mobile, .bf_wrap_top_logo_mobile, .bf_wrap_top_cart_mobile, .bf_wrap_top_about_mobile, .bf_wrap_top_burger_desktop, .bf_wrap_top_search_desktop, .bf_wrap_top_logo_desktop, .bf_wrap_top_cart_desktop, .bf_wrap_top_about_desktop {
+  display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      background: ;
+      cursor: pointer;
+      filter: drop-shadow(2px 4px 12px black);
+}
+
+
 .fa-bars, .fa-question {
   width: 44px;
   text-align: center;
@@ -768,15 +791,27 @@ body {
 .bf_wrap_top_desktop {
   display: none;
   justify-content:space-between;
-  width: calc(312px - 44px);
+  width: calc(312px - 88px);
 }
 .bf_wrap_top_burger_desktop {
   width: 44px;
   line-height: 44px;
 }
+.bf_wrap_top_search_desktop {
+  width: 44px;
+  line-height: 44px;
+}
 .bf_wrap_top_logo_desktop {
   cursor: pointer;
-  width: 216px;
+  width: 128px;
+  line-height: 44px;
+  font-size: 26px
+}
+.bf_wrap_top_cart_desktop {
+  position: fixed;
+  top: 4px;
+  right: 52px;
+  width: 44px;
   line-height: 44px;
 }
 .bf_wrap_top_about_desktop {
@@ -790,9 +825,9 @@ body {
 .bf_wrap_top_menu {
   position: fixed;
   top: 4px;
-  right: 44px;
+  right: 92px;
   display: block;
-  width: calc(100% - 328px);
+  width: calc(100% - 332px);
   line-height: 44px;
   margin-left: 8px;
     margin-right: 8px;
@@ -1000,6 +1035,7 @@ body {
 .swiper-button-next, .swiper-button-prev {
   top: calc(100% - 44px - 4px) !important;
   cursor: pointer;
+  filter: drop-shadow(2px 4px 12px black);
 }
 .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after,
 .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {display: none !important}
@@ -2516,7 +2552,7 @@ max-width: 88px;
   display: none;
 }
 .rc_logo_top {
-  max-width: 216px;
+  max-width: 128px;
   max-height: 44px;
 }
 img {
