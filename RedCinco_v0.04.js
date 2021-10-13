@@ -205,7 +205,7 @@ var loadgeneral = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#general').hasClass("swiper-slide-visible") ) && ( isEmpty($('.general')) ) ) {
 		console.log('general is empty && is visible');
-$(".general").append('<div class="temp">hola</div>');
+$(".general").append('<div class="temp">general</div>');
 // clear the setInterval
 clearInterval(loadgeneral);
 	}
@@ -220,7 +220,7 @@ var loadnacionales = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#nacionales').hasClass("swiper-slide-visible") ) && ( isEmpty($('.nacionales')) ) ) {
 		console.log('nacionales is empty && is visible');
-$(".nacionales").append('<div class="temp">hola</div>');
+$(".nacionales").append('<div class="temp">nacionales</div>');
 // clear the setInterval
 clearInterval(loadnacionales);
 	}
@@ -235,7 +235,7 @@ var loadmundo = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#mundo').hasClass("swiper-slide-visible") ) && ( isEmpty($('.mundo')) ) ) {
 		console.log('mundo is empty && is visible');
-$(".mundo").append('<div class="temp">hola</div>');
+$(".mundo").append('<div class="temp">mundo</div>');
 // clear the setInterval
 clearInterval(loadmundo);
 	}
@@ -250,7 +250,7 @@ var loadpolitica = setInterval(function() {
 // check if it's empty && visible
 if ( ( $('#politica').hasClass("swiper-slide-visible") ) && ( isEmpty($('.politica')) ) ) {
 		console.log('politica is empty && is visible');
-$(".politica").append('<div class="temp">hola</div>');
+$(".politica").append('<div class="temp">politica</div>');
 // clear the setInterval
 clearInterval(loadpolitica);
 	}
@@ -1090,3 +1090,56 @@ displayCart();
 
 
 }); // end document ready
+
+
+
+
+
+
+
+
+///////////////////////////////////
+// BEGIN Instafeed
+///////////////////////////////////
+$(document).ready(function() {
+
+var userFeed = new Instafeed({
+		get: 'user',
+		target: "instafeed",
+    resolution: 'standard_resolution',
+    sortBy: 'most-recent',
+    limit: 36,
+    links: true,
+		accessToken: 'IGQVJVNUpHSnBZAZAFRIRDZAvdVdpcUhnVHdmdW5qVGVtdzVHdTI4NzBDTXg3Sm42TWwyX3NPN0NBMXlGazhNVWxtSmJzTVQ5RWFoNU5CdjBFMUV0NnZAVUmhLUTVmbDhhS1NxWE5DMFFnQm1sNUVTRjI2dAZDZD&fields=media_url,media_type,caption,permalink',
+    template: '<div class="item"><img src="{{image}}"/><div class="caption">{{caption}}</div><div class="video">{{video}}</div></div>'
+
+	});
+	userFeed.run();
+
+$(".modal_to_show_enlarged_item, .modal_close_it_x").hide();
+
+
+$("#instafeed").on('click', '.item', function(e) {
+var putThisOneInTheModal = $(this).html();
+$(".modal_close_it_x").show();
+$(".modal_to_show_enlarged_item").show().append(putThisOneInTheModal).css("cursor", "normal");
+$(".modal_to_show_enlarged_item").find("img").css("width", "100%").css("max-width", "90vw");
+$(".modal_to_show_enlarged_item").find(".caption").css("color", "gainsboro").css("background", "black").css("padding", "20px").css("width", "100%").css("max-width", "50vw");
+
+if ($(window).width() > 1200) {
+
+ $(".modal_to_show_enlarged_item > img").css("max-width", "1200px");
+
+}
+
+});
+
+$(".modal_to_show_enlarged_item, .modal_close_it_x").on( "click", function() {
+  $(".modal_to_show_enlarged_item").empty().hide();
+  $(".modal_close_it_x").hide();
+});
+
+});
+///////////////////////////////////
+// END Instafeed
+///////////////////////////////////
